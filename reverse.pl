@@ -21,3 +21,10 @@ insertar_final(E, [Ca|Resto], [Ca|R]) :- insertar_final(E, Resto, R).
 reverse([],[]).
 
 reverse([CaL|ReL], R) :- insertar_final(CaL, R2, R), reverse(ReL, R2).
+
+% elemento_enesimo(+Pos, +Lista, -Elem)
+% es cierto cuando Elem unifica con el elemento que ocupa la posicion pos en la lista
+
+elemento_enesimo(1, [E|_], E).
+
+elemento_enesimo(POS, [_|Res], E) :- POS > 1, elemento_enesimo(POS1, Res, E), POS is POS1+1.
