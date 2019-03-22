@@ -2,14 +2,17 @@
 % es cierto si R unifica con una lista que contiene los elementos de Lista ordenados de menor a mayor
 % Lista puede contener elementos repetidos
 
-ord_burbuja(Lista, R) :- ordenada(R).
-ord_burbuja([E1, E2|Resto], R) :- hknrtiohretgiorehtg
+ord_burbuja(L, L) :- ordenada(L).
+ord_burbuja(L, R3) :- append(L1, [E1, E2|L2], L), % separar dos elementos consecutivos
+					  E1 > E2,  
+					  append(L1, [E2, E1|L2], R2), % colocar esos elementos correctamente
+					  ord_burbuja(R2, R3).
 
 % ordenada(Lista)
 % es cierto si los elementos de Lista estan ordenados de menor a mayor
 
 ordenada([]). % vacia
 ordenada([_]). % un elemento
-ordenada([E1,E2|resto]) :- E1 =< E2, ordenada([E2|Resto]).
+ordenada([E1,E2|Resto]) :- E1 =< E2, ordenada([E2|Resto]).
 
 
