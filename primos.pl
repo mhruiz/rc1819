@@ -5,7 +5,12 @@
 % es cierto si Lista unifica con los primos que van desde X hasta Y
 % X tiene que ser menor o igual que Y
 
+% ir cerrando el rango
+primosEntreXY(X, Y, []) :- X > Y.
 
+primosEntreXY(X, Y, [X|R]) :- X =< Y, X2 is X + 1, primo(X), primosEntreXY(X2, Y, R).
+
+primosEntreXY(X, Y, R) :- X =< Y, X2 is X + 1, \+ primo(X), primosEntreXY(X2, Y, R). %    \+ <---- NOT
 
 % primo(+X)
 % es cierto si X es primo
