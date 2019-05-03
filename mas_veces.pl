@@ -71,3 +71,17 @@ masveces2([E], [(E,1)]).
 masveces2([H|T], (H, N2)) :- masveces2(T,R), member((H,N), R), N2 is N + 1.
 
 masveces2([H|T], (E, N)) :- masveces2(T,R), \+ member((H,N), [(E,N) | R]).
+
+%--------------------------------------------------------------------------------------------------
+
+% masveces3(+Lista, -ListaR)
+% es cierto si ListaR unifica con una lista de tuplas con el-los elementos 
+% mas frecuentes de Lista y el numero de repeticiones
+
+% masveces3([], []).
+
+% masveces3([E], [(E, 1)]).
+
+% masveces3([H | T], [(H, N2)]) :- masveces3(T, R), R \= [], member((H, N), R), N2 is N + 1.
+
+% masveces3([H | T], ) :- masveces3(T, R), R \= [], \+ member((H, _), R), 
