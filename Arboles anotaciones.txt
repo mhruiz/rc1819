@@ -1,0 +1,9 @@
+Árboles
+
+t(Etiqueta, Hijo izquierdo, Hijo derecho)
+
+nil ----> null
+
+Ejemplo:
+
+t('a', t('b', nil, nil), t('c', nil, nil) )
