@@ -7,3 +7,12 @@ nil ----> null
 Ejemplo:
 
 t('a', t('b', nil, nil), t('c', nil, nil) )
+
+
+% arboles genericos
+%
+% t(etiqueta, lista_Hijos)
+%
+% t(a, [ t(b, []) , t(c, []) , t(d, []), t(e, []) ] )
+%
+% no existe arbol nulo en arboles genericos
