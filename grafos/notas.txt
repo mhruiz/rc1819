@@ -1,0 +1,25 @@
+
+% Representacion de Grafos
+
+% Conjunto de hechos
+
+arista(a, b).
+arista(b, c).
+arista(a, c).
+
+% Lista de aristas y lista de vertices
+
+% g(ListaVertices, ListaAristas)
+
+g([a,b,c], [a(a,b), a(c,b), a(a,c)]).
+
+% Grafos dirigidos y no dirigidos
+
+% conectado(Grafo, Ini, Fin)
+
+% Predicado conectado para grafos dirigidos
+conectado(g(_,A), Ini, Fin) :- member(a(Ini,Fin), A).
+
+% Predicado conectado para grafos no dirigidos
+conectado(g(_,A), Ini, Fin) :- member(a(Ini,Fin), A).
+conectado(g(_,A), Ini, Fin) :- member(a(Fin,Ini), A).
